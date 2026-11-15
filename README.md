@@ -4,8 +4,6 @@
 
 **Teleportation Network Routing Lab** — by Darion Kellar
 
-## ❓ What is this?
-
 TeleportNet-Router is an **educational teleportation routing lab** in ONE pure-Python file. It is the **application / routing layer** of Darion's quantum network stack, and it is deliberately *not* a repeat of the layers below it:
 
 - **TeleportX** = the teleportation **protocol** (one hop, one Bell pair). 🌀
@@ -16,42 +14,60 @@ A **teleport request** arrives — source, destination, payload, minimum fidelit
 
 Honest scope, stated up front: no production quantum internet or teleportation service exists. This lab routes **nothing real**: no network, no hardware, no matter, no living beings — and nothing faster than light, because every teleported qubit still pays for its **2 classical bits** at light speed. Every live / product claim sits behind a permanent HOLD gate (14 total). 🔒
 
-## 🧰 Tech Stack Badges & Full Architecture
+[![CI](https://github.com/kimanicollier44-cmyk/TeleportNet-Router/actions/workflows/ci.yml/badge.svg)](https://github.com/kimanicollier44-cmyk/TeleportNet-Router/actions/workflows/ci.yml)
+[![Docker Publish](https://github.com/kimanicollier44-cmyk/TeleportNet-Router/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/kimanicollier44-cmyk/TeleportNet-Router/actions/workflows/docker-publish.yml)
+
+> ℹ️ These are the **live** workflow badges for this repo. They activate as soon as the `ci.yml` and `docker-publish.yml` files from the paste pack are pasted into `.github/workflows/` — until then they have nothing to report yet.
+
+## 🧰 Tech Stack Badges & Full Architecture Tech Stack
+
+### 💻 Core Programming Languages & Core Systems
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Stdlib Only](https://img.shields.io/badge/Dependencies-Zero-2ea44f)
 ![Network](https://img.shields.io/badge/Network-Zero-2ea44f)
-![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
+![Deterministic](https://img.shields.io/badge/Deterministic-Byte--Identical-2ea44f)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-![CI](https://img.shields.io/badge/CI-Pending%20Paste-lightgrey)
-![Docker Publish](https://img.shields.io/badge/Docker%20Publish-Pending%20Paste-lightgrey)
 
-> ℹ️ Workflow badges are static **'Pending Paste'** shields on purpose: the `ci.yml` and `docker-publish.yml` files are delivered in the local paste pack and are **not pasted yet**, so no live badge is claimed.
-
-**📦 1. Language & Runtime**
-- 🐍 Python 3.12, pure standard library (`math`, `heapq`, `hashlib`, `json`, `sys`)
-- 🚫 Zero dependencies, zero network, deterministic (double-run byte-identical)
-
-**⚛️ 2. Quantum Core**
-- 🔗 Werner link model inherited from EntangleNet-Q: `w = q · exp(-d / L)`, `F = (1 + 3w)/4`
-- 🔀 Swapping product rule, DEJMPS purification map + success probability, teleport output `(2F + 1)/3`, memory T2 decay — formulas sim-verified in EntangleNet-Q, cross-checked here against its published numbers
-
-**🛰️ 3. Routing / AI / ML**
-- 🗺️ Three Dijkstra strategies (fidelity / latency / balanced), greedy decay-aware purification planner, EDF session allocator, failure rerouting
+- 🐍 Python 3.12, pure standard library (`math`, `heapq`, `hashlib`, `json`, `sys`) — zero dependencies, zero network, deterministic (double-run byte-identical)
+- ⚛️ Quantum core: Werner link model inherited from EntangleNet-Q — `w = q · exp(-d / L)`, `F = (1 + 3w)/4`; swapping product rule, DEJMPS purification map + success probability, teleport output `(2F + 1)/3`, memory T2 decay — formulas sim-verified in EntangleNet-Q, cross-checked here against its published numbers
+- 🗺️ Routing engine: three Dijkstra strategies (fidelity / latency / balanced), greedy decay-aware purification planner, EDF session allocator, failure rerouting
 - 🧠 TinyML kNN session-feasibility classifier (from scratch, stdlib): feasible / needs-purification / infeasible
-- 🔮 Gemini Carbon 4 DECIDER seat (names-only, tighten-only) + Muse advisor (never overrides HOLD)
+- 🪑 Council seats: Gemini Carbon 4 DECIDER (names-only, tighten-only) + Muse advisor (never overrides HOLD) + Google Flow plan-only (rendered = False, live = 0)
 
-**🎬 4. Media / Planning**
-- 🎥 Google Flow plan-only seat (rendered = False, live = 0)
+### ⛓️ Web3 & Infrastructure
 
-**🐳 5. Infrastructure**
-- 🐳 Docker (`python:3.12-slim`), GitHub Actions CI + Docker Publish (paste pack)
+- 🚫 **Not applicable — honestly.** No blockchain, no Web3, no tokens, and no live network of any kind: the "network" in this lab is a labeled simulation graph (Los Angeles / Las Vegas / Phoenix / Albuquerque / Denver / Dallas) inside one offline file. No fake badges here.
+
+### ⚙️ Platform Support & Hardware Architecture
+
+![Linux](https://img.shields.io/badge/Linux-Any-FCC624?logo=linux&logoColor=black)
+![macOS](https://img.shields.io/badge/macOS-Any-000000?logo=apple&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-Any-0078D6?logo=windows&logoColor=white)
+
+- 🖥️ Pure Python — runs anywhere Python 3.12+ runs (Linux, macOS, Windows), plus the `python:3.12-slim` Docker image
+- 🔒 No hardware is controlled, ever: real quantum hardware, repeaters, routers, and satellite links are permanent HOLD gates (see the gate table below)
+
+### ⚡ Low-Level Infrastructure & Performance
+
+- 🚫 **No low-level code — honestly.** No C, no C++, no GPU, no compiled extensions: this is one interpreted Python file on purpose, so every number can be read, checked, and diffed. Performance here means honest algorithms — Dijkstra on `heapq`, a greedy planner, EDF allocation — all deterministic and byte-identical between runs.
+
+### 🛠️ DevOps & Build Tools
+
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%20%2B%20Publish-2088FF?logo=githubactions&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-33%20passed-0A9EDC?logo=pytest&logoColor=white)
+![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git&logoColor=white)
+
+- 🐳 Docker (`python:3.12-slim`), GitHub Actions CI + Docker Publish (delivered in the paste pack)
 - 🎯 Target image: `credkellar/teleportnet-router:latest`
+- 🧪 Tests: `pytest` (33 tests) + the built-in CHECKS suite (47 checks) in `main.py`
 
-**🔒 6. Safety**
-- ⛔ 14 HOLD gates — live network operation, real hardware, FTL claims, production-service claims, teleporting matter or living beings, and more are permanently held
+### ☁️ Cloud Providers
 
-## 🔬 What this does
+- 🚫 **None — honestly.** No cloud provider is used or needed: the lab runs fully offline on your own machine or in a local Docker container. Docker Hub appears only as the registry the publish workflow pushes the image to.
+
+## What this does?
 
 1. 📥 **Session model** — a request is `(source, destination, payload spec, minimum pair fidelity, deadline, qubits)`. Payloads of kind `matter` or `living_being` never reach the routing math: they return **HOLD** immediately, by gate.
 2. 🗺️ **Three path strategies** — on the same labeled sim graph as EntangleNet-Q (Los Angeles / Las Vegas / Phoenix / Albuquerque / Denver / Dallas): **fidelity** (Dijkstra on −ln w), **latency** (expected generation + transit time), and **balanced** (fidelity cost + schedule time priced in memory-decay units). Los Angeles → Dallas: fidelity picks Las Vegas → Phoenix → Dallas (pair F = 0.5022, schedule 0.7217 s); latency takes the 2-hop legacy-fiber shortcut (0.7200 s) but delivers pair F = 0.3868 — a teleport fidelity of 0.5912, **below the 0.6667 classical limit**; balanced sides with fidelity.
@@ -107,15 +123,18 @@ flowchart LR
     B --> C[tests import main.py directly]
 ```
 
-### `Dockerfile` — container
+### `Dockerfile` + CI flow — container & publish
 
 ```mermaid
 flowchart LR
     A[python:3.12-slim] --> B[COPY project]
     B --> C[CMD python3 main.py demo]
+    D[Push to main] --> E[ci.yml: pytest]
+    D --> F[docker-publish.yml: buildx + login]
+    F --> G[Push credkellar/teleportnet-router:latest]
 ```
 
-## 🤩 Why is this cool?
+## Why is this cool?
 
 1. 🛰️ It completes the operator's view of the quantum stack — TeleportX is the protocol, EntangleNet-Q is the physics, this is the **control room**.
 2. 🗺️ The latency strategy *loses on purpose*: its shortcut delivers teleport fidelity 0.5912, **below the classical limit** — the lab shows why "fastest" is the wrong default.
@@ -128,7 +147,7 @@ flowchart LR
 9. 🧮 Dijkstra three ways, a greedy planner, EDF allocation, and a kNN — all stdlib `math` and `heapq`. No numpy, no networkx, anywhere.
 10. 🎯 Deterministic end to end: run it twice, get byte-identical output — a router you can diff.
 
-## 🛠️ What problems this solves?
+## What problems this solves?
 
 1. ❌ **Problem:** Quantum-network demos teleport over perfect pairs on empty networks. ✅ **Solution:** Sessions here carry fidelity targets and deadlines, share links, and can be refused.
 2. ❌ **Problem:** Routing demos pick one metric (usually hops) and never show the trade-off. ✅ **Solution:** Three strategies run on the same graph and their delivered fidelity *and* schedule are printed side by side.
@@ -141,7 +160,7 @@ flowchart LR
 9. ❌ **Problem:** Session feasibility gets guessed by gut. ✅ **Solution:** A kNN classifier gives a first-pass feasible / needs-purification / infeasible label from the three numbers that matter.
 10. ❌ **Problem:** Simulation tools quietly imply a service is next. ✅ **Solution:** 14 named HOLD gates return exit code 2 for every live-operation or production claim, forever.
 
-## 📥 How to install step-by-step
+## How to install this?
 
 1. 📋 Clone or download this project folder.
 2. 🐍 Make sure Python 3.12+ is installed: `python3 --version`
@@ -180,7 +199,7 @@ docker build -t credkellar/teleportnet-router:latest .
 docker run --rm credkellar/teleportnet-router:latest
 ```
 
-## 📋 Requirements
+## Requirements
 
 - 🐍 Python 3.12 or newer
 - 📦 Dependencies: **none** (standard library only)
@@ -188,20 +207,7 @@ docker run --rm credkellar/teleportnet-router:latest
 - 🧪 For tests only: `pytest`
 - 🐳 Optional: Docker
 
-## 🧒 5th-grade English section
-
-Imagine a **post office for magic coin pairs**. 📮
-
-- People walk up with a **delivery job**: "Send my tiny message-state from Los Angeles to Dallas. It must arrive *this* clean, and *this* fast." That job is called a **session**. 🧾
-- The router is the clerk. First it checks the job is even allowed — nobody may mail a **cat** or a **rock** through the magic post. Those jobs get a big red **HOLD** stamp. 🐱⛔
-- Then the clerk picks a **road**. The *cleanest* road is not always the *fastest* road — one shortcut in this lab is so dirty that the delivery arrives worse than sending it the normal way! The clerk shows you all three roads and their prices. 🛣️
-- If the pairs on the road are too dirty, the clerk schedules **washes** (purification) on the dirtiest stop first — and counts exactly how many spare pairs and seconds the washes cost *before* saying yes. 🧺
-- The clerk also starts each stop's work at just the right time so finished pairs don't sit around **fading** while they wait. Smart timing saves real magic. ⏰
-- Sometimes two jobs need the same road at the same time. The job with the **earliest deadline goes first** — that's the fair rule — and if waiting would make a job late, the clerk says so honestly instead of pretending. 🚦
-- If a road **closes** mid-job, the clerk finds a detour, re-prices it, and still delivers — or tells you the truth if it can't. 💥
-- And no delivery is ever instant: a normal phone call carrying **2 tiny bits** still has to travel with every magic delivery, at light speed. Nothing outruns light — not even magic. 📞
-
-## 🌳 Full file tree
+## FULL project structure tree
 
 ```text
 teleportnet-router/
@@ -212,10 +218,34 @@ teleportnet-router/
 ├── assets/
 │   └── cover.png            # README cover image (2736 x 912)
 ├── Dockerfile               # python:3.12-slim, runs the demo
+├── .gitignore               # __pycache__/, .pytest_cache/, *.pyc
 └── README.md                # this file
 ```
 
 > 📦 Delivered separately as paste packs (not in this tree): `.github/workflows/ci.yml` + `docker-publish.yml`, and the Docker Hub pack (100-char description, 350-char About, overview, categories).
+
+## 🔒 HOLD gates — all 14, permanent
+
+| # | Gate | What stays held |
+|---|------|-----------------|
+| 1 | `live_network_operation` | No operating any real quantum or classical network, ever |
+| 2 | `real_hardware_control` | No control of any real quantum hardware, repeater, or router |
+| 3 | `claim_ftl_communication` | Entanglement never sends information faster than light; teleportation needs a classical channel |
+| 4 | `claim_production_service` | No production teleportation service exists; this is a simulation lab |
+| 5 | `teleport_matter_claim` | No teleporting matter; only quantum states of simulated qubits are routed |
+| 6 | `teleport_living_being_claim` | No teleporting living beings, ever |
+| 7 | `live_qkd_key_use` | No generating or using real cryptographic keys for real traffic |
+| 8 | `commercial_service_claim` | No commercial routing / teleportation service is offered or implied |
+| 9 | `bypass_no_cloning_claim` | The no-cloning theorem is not bypassed; teleportation destroys the original state |
+| 10 | `guaranteed_fidelity_claim` | Fidelities here are model estimates under labeled assumptions, never guarantees |
+| 11 | `live_satellite_link` | No commanding or tasking any real satellite link |
+| 12 | `real_fiber_deployment` | No instructions for deploying or splicing live carrier fiber plant |
+| 13 | `intercept_traffic_claim` | No intercepting, decrypting, or monitoring anyone's real traffic |
+| 14 | `medical_data_transport_claim` | No claims about transporting real medical or personal data |
+
+🧑‍⚖️ **Council seats:** Gemini Carbon 4 Extended Thinking — DECIDER (names-only, tighten-only, MAP → MODEL → STRESS → DECIDE, sha256 trace, `can_override_hold = False`) · Muse — advisor (`can_override_hold = False`) · Google Flow — plan-only (`rendered = False`, `live = 0`).
+
+✅ **Verification:** pytest **33 passed** (project + clean copy) · built-in CHECKS **47/47** · double-run output **byte-identical** · `hold-demo` exits **2** · `main.py` **901 lines**, pure stdlib, zero network.
 
 ---
 
