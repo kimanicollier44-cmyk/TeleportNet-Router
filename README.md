@@ -1,4 +1,4 @@
-![TeleportNet-Router cover](assets/cover.png)
+![TeleportNet-Router cover](TeleportNet-Router%20cover.png)
 
 # TeleportNet-Router 🛰️⚛️
 
